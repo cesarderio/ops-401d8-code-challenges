@@ -4,11 +4,15 @@
 # Author:                       Raphael Chookagian
 # Date of latest revision:      07/11/2023
 # Purpose:                      Create a python script that:
-
+# * Transmit a single ICMP (ping) packet to a specific IP every two seconds.
+# * Evaluate the response as either success or failure.
+# * Assign success or failure to a status variable.
+# * For every ICMP transmission attempted, print the status variable along with a comprehensive timestamp and destination IP tested.
+# *Example output: 2020-10-05 17:57:57.510261 Network Active to 8.8.8.8*
 
 # Script Outline
-# Import libraries
 
+# Import libraries
 import datetime
 import time
 import subprocess
@@ -33,16 +37,16 @@ def send_ping():
 
         # Map the return code to a descriptive message
         if return_code == 0:
-            response_message = 'Success'
+            res_mes = 'Success'
         elif return_code == 1:
-            response_message = 'Destination Unreachable'
+            res_mes = 'Destination Unreachable'
         elif return_code == 2:
-            response_message = 'Packet Loss'
+            res_mes = 'Packet Loss'
         else:
-            response_message = 'Unknown Error'
+            res_mes = 'Unknown Error'
 
         # Print the response message
-        print(f"[{timestamp}] Destination IP: {dest_ip} | Response: {response_message}")
+        print(f"[{timestamp}] Destination IP: {dest_ip} | Response: {res_mes}")
 
         # Wait for 2 seconds before sending the next ping
         time.sleep(2)
