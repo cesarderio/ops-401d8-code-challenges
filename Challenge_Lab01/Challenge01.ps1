@@ -19,8 +19,6 @@
 # Main
 
 
-
-
 # Enable automatic screen lock
 Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "ScreenSaveTimeOut" -Value 300
 Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "ScreenSaverIsSecure" -Value 1
