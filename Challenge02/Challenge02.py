@@ -12,16 +12,13 @@
 
 
 # Import libraries
-import os, time, datetime
+import os
+import time
+import datetime
 import smtplib
 from getpass import getpass
 
 # Declare Variables
-
-
-
-
-
 email = input("Enter your email: ")
 password = getpass("Enter your password: ")
 ip = input("Please provide an ip address: ")
@@ -29,13 +26,13 @@ ip = input("Please provide an ip address: ")
 up = "Host is active"
 down = "Host is down"
 
+# Check that status changed
+last = 0
+ping_result = 0
+
 # Declare Functions
 
-# Create
-
-# Main
-
-
+# Funtion that handles when the host goes from down to up
 def send_upAlert():
   # gets timestamp
   now = datetime.datetime.now()
@@ -48,10 +45,11 @@ def send_upAlert():
   # content of email
   message = "Server is up and running"
   # send the email
-  s.sendmail(raphaellab2323@gmail.com, email, message)
+  s.sendmail("raphaellab2323@gmail.com", email, message)
   # close the session
   s.quit()
 
+# Function that handles when the host goes from up to down
 def send_downAlert():
   # gets timestamp
   now = datetime.datetime.now()
@@ -64,7 +62,7 @@ def send_downAlert():
   # content of email
   message = "Server connection is down"
   # send the email
-  s.sendmail(raphaellab2323@gmail.com, email, message)
+  s.sendmail("raphaellab2323@gmail.com", email, message)
   # close the session
   s.quit()
 
@@ -72,28 +70,30 @@ def send_downAlert():
 
 # function handles ping
 def check_ping(ip):
+    global last
+    global ping_result
+    # sends single ping to target and puts the response in a variable
+    response = os.system("ping -c 1 " + ip)
 
-  global ping_result
-  global last
-  # sends single ping to target and puts the response in a variable
-  response = os.system("ping -c 1" + ip)
+    # check the change of status
+    # check the response
+    if ((ping_result != last) and (response == 0)):
+        # send up alert
+        send_upAlert()
+        ping_status = "Host is active"
+    else:
+        # send down alert
+        send_downAlert()
+        ping_status = "Host is down"
+    return ping_status
 
-  # check the response
-  if response == 0:
-    # send up alert
-    send_upAlert()
-    ping_status = "Host is active"
-  else:
-    # send down alert
-    send_downAlert()
-    ping_status = "Host is down"
+# Main
+while True:
+    response = os.system("ping -c 1 " + ip)
 
-  return ping_status
-
-
-
-
-
-
-
-# End
+    # Extract the exit code from the response
+    ping_result = response >> 8
+    ping_status = check_ping(ip)
+    print(ping_status)
+    # Wait for 10 seconds before checking again
+    time.sleep(10)
