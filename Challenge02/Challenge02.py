@@ -88,12 +88,19 @@ def check_ping(ip):
     return ping_status
 
 # Main
+
+# While loop 
 while True:
+    # get the response from the host
     response = os.system("ping -c 1 " + ip)
 
     # Extract the exit code from the response
     ping_result = response >> 8
+    # check the change of status
     ping_status = check_ping(ip)
+    # print the status
     print(ping_status)
     # Wait for 10 seconds before checking again
     time.sleep(10)
+
+# End
