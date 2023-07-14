@@ -4,12 +4,15 @@
 
 
 # Encrypt the secret.txt file
-(Get-Item -Path C:\Users\Administrator\Desktop\secret.txt).Encrypt()
+# (Get-Item -Path C:\Users\Administrator\Desktop\secret.txt).Encrypt()
 # Decrypt the secret.txt file
-(Get-Item -Path C:\Users\Administrator\Desktop\secret.txt).Decrypt()
+# (Get-Item -Path C:\Users\Administrator\Desktop\secret.txt).Decrypt()
 
 
-
+# powershell command
+Encrypt-File -Path "C:\Users\Administrator\Desktop\secret.txt"
+# powershell command
+Decrypt-File -Path "C:\Users\Administrator\Desktop\secret.txt"
 
 
 # start a process for laughs
