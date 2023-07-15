@@ -1,23 +1,13 @@
 # convert to a string
 "SECRET" | ConvertTo-SecureString -AsPlainText -Force | ConvertTo-SecureString
 
-
+# create a new file with hello world inside the file
+echo "Hello world!" > secret.txt
 
 # Encrypt the secret.txt file
-# (Get-Item -Path C:\Users\Administrator\Desktop\secret.txt).Encrypt()
+(Get-Item -Path "C:\Users\Administrator\Desktop\secret.txt").Encrypt()
 # Decrypt the secret.txt file
-# (Get-Item -Path C:\Users\Administrator\Desktop\secret.txt).Decrypt()
-
-
-# powershell command
-Encrypt-File -Path "C:\Users\Administrator\Desktop\secret.txt"
-# powershell command
-Decrypt-File -Path "C:\Users\Administrator\Desktop\secret.txt"
-
-
-# start a process for laughs
-Start-Process "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
-
+(Get-Item -Path "C:\Users\Administrator\Desktop\secret.txt").Decrypt()
 
 
 
