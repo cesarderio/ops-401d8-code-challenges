@@ -16,13 +16,6 @@
 
 # End
 
-
-
-
-
-
-
-
 # create a new file with hello world inside the file
 echo "Hello world!" > secret.txt
 
