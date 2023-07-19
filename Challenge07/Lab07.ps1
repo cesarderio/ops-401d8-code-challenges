@@ -3,14 +3,11 @@
 # Date of latest revision:      07/18/2023
 # Purpose:                      Create a powershell script that enables Bitlocker and initializes the Full Disk Encryption (FDE) process on the specified drive
 
-# Declare the variables
+# Temporarily bypass the execution policy
+Set-ExecutionPolicy Bypass -Scope Process -Force
+
 # Set the drive letter or mount point for encryption
 $driveLetter = "C:"
-
-# Declare the functions
-
-# Create
-# Main
 
 # Enable BitLocker and start encryption
 $encryptionStatus = (Get-BitLockerVolume -MountPoint $driveLetter).EncryptionPercentage
@@ -21,5 +18,8 @@ if ($encryptionStatus -eq $null) {
     Write-Host "BitLocker is already enabled on the drive."
     exit
 }
+
+# Revert the execution policy back to its original state
+Set-ExecutionPolicy -Scope Process -Default
 
 # End
