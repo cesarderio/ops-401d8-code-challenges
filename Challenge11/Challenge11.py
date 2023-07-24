@@ -40,7 +40,7 @@ for dst_port in port_range:
         tcp_layer = response.getlayer(TCP)
         # Port is open
         if tcp_layer.flags == 0x12:
-            send_rst = sr(IP(dst=host)/TCP(sport=scr_port, dport=dst_port, flags="R"), timeout=1, verbose=0)
+            send_rst = sr1(IP(dst=host)/TCP(sport=scr_port, dport=dst_port, flags="R"), timeout=1, verbose=0)
             print(f"{host}:{dst_port} is currently open.")
             # Port is closed
         elif tcp_layer.flags == 0x14:
