@@ -2,7 +2,7 @@
 
 # Script Name:                  
 # Author:                       Raphael Chookagian
-# Date of latest revision:      07/18/2023
+# Date of latest revision:      07/24/2023
 # Purpose:                      Create a python script:
 
 # In Python, create a TCP Port Range Scanner that tests whether a TCP port is open or closed. The script must:
@@ -30,6 +30,7 @@ port_range = range(20, 25)
 # scr_port = 22
 # dst_port = 22
 
+# Main
 for dst_port in port_range:
     scr_port = random.randint(1024, 65535)  # Randomize the TCP source port
     response = sr1(IP(dst=host)/TCP(sport=scr_port, dport=dst_port, flags="S"), timeout=1, verbose=0)
@@ -46,6 +47,7 @@ for dst_port in port_range:
         elif tcp_layer.flags == 0x14:
             print(f"{host}:{dst_port} is currently not open.")
 
+# End
 
 # p=sr1(IP(dst=host)/ICMP())
 # if p:
