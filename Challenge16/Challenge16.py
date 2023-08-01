@@ -17,20 +17,21 @@
 # * Search the word list for the user input string.
 # * Print to the screen whether the string appeared in the word list.
 
-# import libraries
+
+
 import time
+import getpass
 
 # Declare functions
 
 # Create
-
 def Off(file_path, delay=1):
     with open(file_path, 'r') as file:
         for line in file:
             # remove newline characters
             word = line.strip()
             print(word)
-            # delay 
+            # delay
             time.sleep(delay)
 
 def Def(file_path, target_word):
@@ -50,16 +51,16 @@ def main():
         mode = int(input("Select task (0 to exit): "))
         
         if mode == 1:
-            file_path = input("Enter file path(wordlist): ")
+            file_path = input("Enter file path (wordlist): ")
             Off(file_path)
         elif mode == 2:
             file_path = input("Enter (wordlist) file path: ")
-            target_word = input("Enter target word: ")
+            target_word = getpass.getpass("Enter target word: ")
             Def(file_path, target_word)
         elif mode == 0:
             break
         else:
-            print("Invalid, please select available mode")
+            print("Invalid, please select an available mode")
 
 
 # Main
@@ -72,45 +73,66 @@ if __name__ == "__main__":
 
 
 
+# import libraries
+# import time
 
+# # Declare functions
 
+# # Create
 
-
-
-
-
-
-
-
-
-
-# def wordsList(file_path, delay=1):
+# def Off(file_path, delay=1):
 #     with open(file_path, 'r') as file:
 #         for line in file:
-#             word = line.strip()  # remove newline characters
+#             # remove newline characters
+#             word = line.strip()
 #             print(word)
-#             time.sleep(delay)  # delay in seconds
+#             # delay 
+#             time.sleep(delay)
 
-# def target(file_path, target_word):
+# def Def(file_path, target_word):
 #     with open(file_path, 'r') as file:
 #         for line in file:
 #             word = line.strip()  # remove newline characters
 #             if word == target_word:
 #                 print(f"'{target_word}' match found in list.")
 #                 return
-#     print(f"'{target_word}' not found in word list.")
+#     print(f"'{target_word}' no match found in list.")
 
 # def main():
-#     mode = int(input("Enter 1 for Offensive mode or 2 for Defensive mode: "))
-#     if mode == 1:
-#         file_path = input("Enter the word list file path for Offensive mode: ")
-#         wordsList(file_path)
-#     elif mode == 2:
-#         file_path = input("Enter the word list file path for Defensive mode: ")
-#         target_word = input("Enter the word to search for: ")
-#         target(file_path, target_word)
-#     else:
-#         print("Invalid mode selected. Please enter 1 or 2.")
+#     while True:
+#         print("1: Offensive")
+#         print("2: Defensive")
+#         print("0: Exit")
+#         mode = int(input("Select task (0 to exit): "))
+        
+#         if mode == 1:
+#             file_path = input("Enter file path(wordlist): ")
+#             Off(file_path)
+#         elif mode == 2:
+#             file_path = input("Enter (wordlist) file path: ")
+#             target_word = input("Enter target word: ")
+#             Def(file_path, target_word)
+#         elif mode == 0:
+#             break
+#         else:
+#             print("Invalid, please select available mode")
+
+
+# # Main
 
 # if __name__ == "__main__":
 #     main()
+
+# # End
+
+
+
+
+
+
+
+
+
+
+
+
