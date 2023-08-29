@@ -15,12 +15,6 @@
 # Import libraries
 import os, time, sys, socket
 
-# Declare variable
-addr = input("Enter an IP address: ")
-port = input("Enter port number: ")
-
-# Declare functions
-
 # Netcat function
 def netcat_scan(addr, port):
     try:
@@ -62,7 +56,7 @@ while True:
     print("3. Nmap Scan")
     print("4. Exit")
     
-    choice = input("Enter your choice (1/2/3/4): ")
+    choice = input("Enter choice number: ")
 
     if choice == "1":
         addr = input("Enter an IP address or URL for Netcat scan: ")
@@ -80,4 +74,3 @@ while True:
         break
     else:
         print("Invalid choice. Please select a valid option.")
-

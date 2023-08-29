@@ -74,7 +74,7 @@ while True:
     print("5. CURL Header Scan")
     print("6. Exit")
     
-    choice = input("Enter your choice (1/2/3/4/5/6): ")
+    choice = input("Enter choice number: ")
 
     if choice == "1":
         addr = input("Enter an IP address or URL for Netcat scan: ")
