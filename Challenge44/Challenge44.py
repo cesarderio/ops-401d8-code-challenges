@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# Script Name:                  Attack Tools Part 2 of 3
+# Script Name:                  Create a Port Scanner
 # Author:                       Raphael Chookagian
 # Date of latest revision:      09/06/2023
 # Purpose:                      Create a python script: Complete the Demo.
