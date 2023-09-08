@@ -6,7 +6,8 @@ Copy this template down to your local coding environment and finish all TODOs.
 
 The purpose of this script is to determine if a target port is open or closed, using strictly Python 3 commands. To do so, we’ll be importing the socket module, a low-level networking interface for Python.
 
-```#!/usr/bin/python3
+```
+#!/usr/bin/python3
 
 import socket
 
@@ -23,4 +24,5 @@ def portScanner(portno):
     else:
         print("Port open")
 
-portScanner(port)```
+portScanner(port)
+```
