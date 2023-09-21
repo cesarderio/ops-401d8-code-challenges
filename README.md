@@ -19,17 +19,8 @@ Dive deep into the world of cybersecurity with these hands-on code challenges. E
 
 ## Getting Started
 
-1. **Clone the Repository**:
-
-   ```bash
-   git clone https://github.com/cesarderio/ops-401d8-code-challenges.git
-
-Navigate to a Challenge:
-
-bash
-Copy code
-cd ops-401d8-code-challenges/path_to_challenge
 Follow the Challenge Instructions:
+
 Each challenge comes with its own set of instructions. Ensure you read them thoroughly before diving in.
 
 <!-- -------------------------------- -->
