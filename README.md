@@ -2,7 +2,10 @@
 
 A collection of code challenges tailored for the Ops-401d8 cybersecurity course.
 
-![Banner Image](./assets/hood.png)
+<!-- ![Banner Image](./assets/hood.png) -->
+
+| ![Banner Image](./assets/cc.png) | ![Banner Image](./assets/hoode.png) |
+|:---:|:---:|
 
 ## Introduction
 
